@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo de Red</title>
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
+    -->
+    <link rel="stylesheet" href="./src/reset.min.css">
+    <link rel="stylesheet" href="./src/reveal.min.css">
+    <link rel="stylesheet" href="./src/white.min.css">
+    <style>
+        /* Estilos personalizados */
+        .reveal h1, .reveal h2 {
+            color: #3E4C59;
+        }
+        .reveal p, .reveal ul {
+            color: #606c76;
+        }
+        .reveal section {
+            background-color: #f4f4f9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .reveal ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .reveal ul li {
+            margin-bottom: 10px;
+        }
+        .reveal ul li:before {
+            content: "✔";
+            color: #1a73e8;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1 -->
+            <section data-transition="zoom">
+                <h1>Qué es un Protocolo de Red</h1>
+                <p>Normas y pautas que permiten la comunicación efectiva entre dispositivos en una red.</p>
+            </section>
+            
+            <!-- Slide 2 -->
+            <section data-transition="slide">
+                <h2>Elementos Fundamentales</h2>
+                <ul>
+                    <li>Origen</li>
+                    <li>Destino</li>
+                    <li>Medio o canal</li>
+                </ul>
+            </section>
+            
+            <!-- Slide 3 -->
+            <section data-transition="fade">
+                <h2>Formas de Transmisión de Datos</h2>
+                <ul>
+                    <li><strong>Unicast:</strong> Comunicación entre dos nodos.</li>
+                    <li><strong>Multicast:</strong> Comunicación a un grupo de nodos.</li>
+                    <li><strong>Broadcast:</strong> Comunicación a todos los nodos.</li>
+                </ul>
+            </section>
+            
+            <!-- Slide 4 -->
+            <section data-transition="convex">
+                <h2>Tipos de Protocolos de Red</h2>
+                <p>Basados en el Modelo OSI:</p>
+                <ul>
+                    <li><strong>Capa de aplicación:</strong> HTTP, FTP, SMTP...</li>
+                    <li><strong>Capa de presentación:</strong> AFP, NFS...</li>
+                    <li><strong>Capa de sesión:</strong> NetBIOS, ISNS...</li>
+                    <li><strong>Capa de transporte:</strong> TCP, UDP...</li>
+                    <li><strong>Capa de red:</strong> IP, RIP, IGP...</li>
+                    <li><strong>Capa de enlace de datos:</strong> Ethernet, ARP...</li>
+                    <li><strong>Capa física:</strong> DSL, Bluetooth...</li>
+                </ul>
+            </section>
+            
+            <!-- Slide 5 -->
+            <section data-transition="concave">
+                <h2>Protocolos de Red Más Utilizados</h2>
+                <ul>
+                    <li><strong>HTTP:</strong> Transferencia de documentos de hipertexto.</li>
+                    <li><strong>DNS:</strong> Traducción de direcciones IP en nombres legibles.</li>
+                    <li><strong>DHCP:</strong> Configuración dinámica de IPs.</li>
+                    <li><strong>SMTP:</strong> Envío de correos electrónicos.</li>
+                    <li><strong>ARP:</strong> Resolución de direcciones MAC.</li>
+                    <li><strong>IP:</strong> Gestión de direcciones IP y envío de datos.</li>
+                </ul>
+            </section>
+
+            <!-- Slide 6 -->
+            <section data-transition="slide">
+                <h2>Diferencias entre Protocolos</h2>
+                <ul>
+                    <li>Cantidad de participantes (Unicast, Multicast, Broadcast)</li>
+                    <li>Forma de transmisión (Simplex, Semi-dúplex, Dúplex completo)</li>
+                    <li>Jerarquía (Simétrica, Asimétrica)</li>
+                    <li>Modo de conexión (Orientados a conexión, No orientados a conexión)</li>
+                </ul>
+            </section>
+
+            <!-- Slide 7 -->
+            <section data-transition="fade">
+                <h2>Conclusiones</h2>
+                <p>Los protocolos de red son fundamentales para la comunicación efectiva y eficiente entre dispositivos en una red, asegurando que los datos se transmitan correctamente.</p>
+            </section>
+        </div>
+    </div>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>-->
+    <script src="./src/reveal.min.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            transition: 'slide', // Transición global
+            slideNumber: true,   // Mostrar número de diapositiva
+            controls: true,      // Mostrar controles de navegación
+            progress: true,      // Mostrar barra de progreso
+            hash: true,          // Habilitar navegación por URL hash
+        });
+    </script>
+</body>
+</html>
