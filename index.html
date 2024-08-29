@@ -1,130 +1,439 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Protocolo de Red - Conmutación y enrutamiento de redes</title>
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css">
     -->
-    <link rel="stylesheet" href="./src/reset.min.css">
-    <link rel="stylesheet" href="./src/reveal.min.css">
-    <link rel="stylesheet" href="./src/white.min.css">
+    <link rel="stylesheet" href="./src/reset.min.css" />
+    <link rel="stylesheet" href="./src/reveal.min.css" />
+    <link rel="stylesheet" href="./src/white.min.css" />
     <style>
-        /* Estilos personalizados */
-        .reveal h1, .reveal h2 {
-            color: #3E4C59;
-        }
-        .reveal p, .reveal ul {
-            color: #606c76;
-        }
-        .reveal section {
-            background-color: #f4f4f9;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .reveal ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .reveal ul li {
-            margin-bottom: 10px;
-        }
-        .reveal ul li:before {
-            content: "✔";
-            color: #1a73e8;
-            margin-right: 10px;
-        }
+      /* Estilos personalizados */
+      .reveal h1,
+      .reveal h2 {
+        color: #3e4c59;
+      }
+      .reveal p,
+      .reveal ul {
+        color: #606c76;
+      }
+      .reveal section {
+        background-color: #f4f4f9;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .reveal ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .reveal ul li {
+        margin-bottom: 10px;
+      }
+      .reveal ul li:before {
+        content: "✔";
+        color: #1a73e8;
+        margin-right: 10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="reveal">
-        <div class="slides">
-            <!-- Slide 1 -->
-            <section data-transition="zoom">
-                <h1>Qué es un Protocolo de Red</h1>
-                <p>Normas y pautas que permiten la comunicación efectiva entre dispositivos en una red.</p>
-            </section>
-            
-            <!-- Slide 2 -->
-            <section data-transition="slide">
-                <h2>Elementos Fundamentales</h2>
-                <ul>
-                    <li>Origen</li>
-                    <li>Destino</li>
-                    <li>Medio o canal</li>
-                </ul>
-            </section>
-            
-            <!-- Slide 3 -->
-            <section data-transition="fade">
-                <h2>Formas de Transmisión de Datos</h2>
-                <ul>
-                    <li><strong>Unicast:</strong> Comunicación entre dos nodos.</li>
-                    <li><strong>Multicast:</strong> Comunicación a un grupo de nodos.</li>
-                    <li><strong>Broadcast:</strong> Comunicación a todos los nodos.</li>
-                </ul>
-            </section>
-            
-            <!-- Slide 4 -->
-            <section data-transition="convex">
-                <h2>Tipos de Protocolos de Red</h2>
-                <p>Basados en el Modelo OSI:</p>
-                <ul>
-                    <li><strong>Capa de aplicación:</strong> HTTP, FTP, SMTP...</li>
-                    <li><strong>Capa de presentación:</strong> AFP, NFS...</li>
-                    <li><strong>Capa de sesión:</strong> NetBIOS, ISNS...</li>
-                    <li><strong>Capa de transporte:</strong> TCP, UDP...</li>
-                    <li><strong>Capa de red:</strong> IP, RIP, IGP...</li>
-                    <li><strong>Capa de enlace de datos:</strong> Ethernet, ARP...</li>
-                    <li><strong>Capa física:</strong> DSL, Bluetooth...</li>
-                </ul>
-            </section>
-            
-            <!-- Slide 5 -->
-            <section data-transition="concave">
-                <h2>Protocolos de Red Más Utilizados</h2>
-                <ul>
-                    <li><strong>HTTP:</strong> Transferencia de documentos de hipertexto.</li>
-                    <li><strong>DNS:</strong> Traducción de direcciones IP en nombres legibles.</li>
-                    <li><strong>DHCP:</strong> Configuración dinámica de IPs.</li>
-                    <li><strong>SMTP:</strong> Envío de correos electrónicos.</li>
-                    <li><strong>ARP:</strong> Resolución de direcciones MAC.</li>
-                    <li><strong>IP:</strong> Gestión de direcciones IP y envío de datos.</li>
-                </ul>
-            </section>
+      <div class="slides">
+        <!-- Slide 1 -->
+        <section data-transition="zoom">
+          <h1>Qué es un Protocolo de Red</h1>
+          <p>
+            Normas y pautas que permiten la comunicación efectiva entre
+            dispositivos en una red.
+          </p>
+        </section>
 
-            <!-- Slide 6 -->
+        <!-- Slide 2 -->
+        <section data-transition="slide">
+          <h2>Elementos Fundamentales</h2>
+          <ul>
+            <li>Origen</li>
+            <li>Destino</li>
+            <li>Medio o canal</li>
+          </ul>
+        </section>
+
+        <section data-transition="slide">
+          <ul>
+            <li>
+              Siempre que se envía o transmite información es importante
+              identificar quien lo hace, hacia donde se envía y tener un método
+              de comunicación acordado (cómo se expresa la idea y cómo se va a
+              interpretar la información cuando llegue). 
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 3 -->
+        <section data-transition="fade">
+          <h2>Formas de Transmisión de Datos</h2>
+          <ul>
+            <li>
+              <strong>Unicast:</strong>Es aquella en la que la comunicación se
+              establece únicamente entre dos nodos. El router puede llegar de
+              forma directa al nodo, pero si no es así, si está en otra red o
+              subred, tendríamos que hacer uso de tecnologías de enrutamiento
+              IP. Haciendo uso de esta forma de transmisión el resto de la red
+              no puede responder ni reconocer los datos.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 3 -->
+        <section data-transition="fade">
+          <ul>
+            <li>
+              <strong>Multicast:</strong> En esta, la información se envía de un
+              nodo a un grupo de nodos a la vez. Es decir, un nodo envía un
+              mensaje y varios receptores de un grupo reciben el mismo.
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <ul>
+            <li>
+              <strong>Broadcast:</strong> Un nodo transmite un mensaje para
+              todos los nodos de la red de forma simultánea. En este caso los
+              receptores no son visibles ni el emisor conoce las direcciones de
+              cada uno, ya que, los participantes dan a conocer su dirección
+              cuando conectan directamente con el emisor. La función principal
+              de este tipo de transmisión es la de conectar todos los
+              dispositivos de la red haciendo posible una distribución masiva de
+              la información sin necesidad de enviarla en más de una ocasión.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 4 -->
+        <section data-transition="convex">
+          <h2>Tipos de Protocolos de Red</h2>
+          <p>
+            El modelo OSI representa el conjunto de pasos con los cuales será
+            posible la comunicación entre dispositivos informáticos. Este se
+            encuentra formado por 7 capas, las cuales se leen desde la superior
+            a la inferior cuando el mensaje va a salir y al contrario cuando el
+            mensaje llega:
+          </p>
+        </section>
+
+        <section data-transition="convex">
+          <strong>Capa de aplicación:</strong>
+          Es la interfaz que podemos visualizar los usuarios finales, por
+          ejemplo, cuando enviamos un mensaje con algún programa (Facebook,
+          WhatsApp…) o vemos un video, interactuamos con esta capa. <br />
+        </section>
+        <section data-transition="convex">
+          <ul>
+            <li>HyperText Transfer Protocol (HTTP)</li>
+            <li>File Transfer Protocol (FTP)</li>
+            <li>Simple Mail Transfer Protocol (SMTP)</li>
+            <li>Secure Shell (SSH)</li>
+            <li>Simple Network Management Protocol (SNMP)</li>
+            <li>Dmain Name System (DNS)</li>
+          </ul>
+        </section>
+
+        <section data-transition="convex">
+          <strong>Capa de presentación:</strong>
+          Se encarga de traducir el formato en el que deseamos ver lo que
+          solicitamos (enviar mensajes, ver videos…). Si, por ejemplo, queremos
+          descargar un archivo, su extensión será manejada por esta capa y
+          podremos verla en la capa de aplicación.
+
+          <ul>
+            <li>Apple Filing Protocol (AFP)</li>
+            <li>Network File System (NFS)</li>
+          </ul>
+        </section>
+
+        <section data-transition="convex">
+          <strong>Capa de sesión:</strong>
+          Es la capa que maneja la conversación entre nuestro dispositivo y el
+          dispositivo remoto. Cuando solicitamos un archivo que se encuentra en
+          otro equipo esta capa abre la comunicación, lleva a cabo la
+          autorización y mantiene el enlace entre los dispositivos.
+
+          <ul>
+            <li>Network Basic Input/Output System (NetBIOS)</li>
+            <li>Internet Storage Name Service (ISNS)</li>
+            <li>File Transfer Protocol (FTP)</li>
+            <li>Session Annoucement Protocol (SAP)</li>
+          </ul>
+        </section>
+
+        <section data-transition="convex">
+          <strong>Capa de transporte:</strong>
+          Segmenta los datos que se van a compartir (si enviamos un archivo lo
+          divide en distintas partes según la capacidad de la red) y les pone la
+          etiqueta TCP o UDP. Pero, ¿cuándo se utiliza TCP y cuando UDP? TCP no
+          solo se usa para transmitir información entre un dispositivo y otro
+          sino también para corroborar la correcta recepción de la información
+          transmitida. En cambio, UDP no hace esta verificación y tiene como
+          principal ventaja su velocidad.
+
+          <ul>
+            <li>User Datagram Protocol (UDP)</li>
+            <li>Transmission Control Protocol (TCP)</li>
+          </ul>
+        </section>
+
+        <section data-transition="convex">
+          <strong>Capa de red:</strong>
+          Determina la mejor ruta para enviar los paquetes por la red. Es la
+          encargada de que los datos transmitidos salgan y lleguen al destino,
+          aunque los dispositivos no se encuentren conectados directamente entre
+          sí. También se le conoce como capa de direccionamiento lógico.
+
+          <ul>
+            <li>Internet Protocol (IP)</li>
+            <li>Routing Information Protocol (RIP)</li>
+            <li>Interior Gateway Protocol (IGP)</li>
+            <li>
+              Internetwork Packet Exchange / Sequence Packet Exchange (IPX /
+              SPX)
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="convex">
+          <strong>Capa de enlace de datos:</strong>
+          Recopila la información de todas las capas superiores y la traduce en
+          información binaria para que así pueda ser enviada por la capa física.
+          También se le conoce como capa de direccionamiento físico.
+
+          <ul>
+            <li>Ethernet</li>
+            <li>Fiber Distributed Data Interface (FDDI)</li>
+            <li>Address Resolution Protocol (ARP)</li>
+            <li>Point to Point Protocol (PPP)</li>
+          </ul>
+        </section>
+
+        <section data-transition="convex">
+          <strong>Capa física:</strong>
+          Envía la información binaria por distintos medios de red (cables,
+          Wifi…). Se encarga tal y como su nombre indica de la conexión física
+          entre los dispositivos de una red y no lleva a cabo ningún tipo de
+          direccionamiento físico ni lógico.
+
+          <ul>
+            <li>Digital Subscriber Line (DLS)</li>
+            <li>Integrated Services Digital Network (ISDN)</li>
+            <li>Bluetooth</li>
+            <li>Universal Serial Bus (USB)</li>
+          </ul>
+        </section>
+
+        <!-- Slide 5 -->
+        <section data-transition="concave">
+          <h2>Protocolos de Red Más Utilizados</h2>
+          <ul>
+            <li>
+              <strong>HTTP:</strong> Es un protocolo de los más importantes en
+              Internet ya que hace posible la transferencia de documentos de
+              tipo “Hipertexto” (en su interior existen enlaces que nos permiten
+              acceder a otros). El lenguaje que utiliza es HTML.
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="concave">
+          <ul>
+            <li>
+              <strong>DNS:</strong> Transforma las direcciones IP en nombres más
+              fáciles de utilizar. Muchas veces son nombres de empresas o
+              instituciones. Hay servidores en el mundo que permiten establecer
+              esta transferencia de dirección IP a DNS y viceversa.
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="concave">
+          <ul>
+            <li>
+              <strong>DHCP:</strong>
+              Es el protocolo de configuración dinámica de host de tipo cliente
+              / servidor. Permite que los dispositivos obtengan una
+              configuración de red de forma automática.
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="concave">
+          <h3>Existen distintos métodos de asignación de IP:</h3>
+          <ul>
+            <li>
+              <strong>Asignación automática: </strong>
+              Cuando un dispositivo intenta conectarse y el servidor le asigna
+              una IP de forma automática.
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="concave">
+          <ul>
+            <li>
+              <strong>Asignación dinámica: </strong>
+              Un servidor asigna una dirección IP por un tiempo concreto. Cuando
+              el tiempo caduca el dispositivo tiene que liberar la dirección y
+              si necesita conectarse de nuevo, tiene que volver a solicitar
+              otra.
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="concave">
+          <ul>
+            <li>
+              <strong>Asignación manual: </strong>
+              Si un dispositivo intenta conectarse tiene que introducir su
+              dirección MAC al servidor y el servidor verificará que a esa
+              dirección MAC le pertenece una dirección IP concreta.
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="concave">
+          <ul>
+            <li>
+              <strong>SMTP: </strong>
+              Es un protocolo de transferencia simple de correo, es decir, tal y
+              como su propio nombre indica se utiliza para enviar y recibir
+              correos electrónicos. Su importancia en el área de la informática,
+              negocios y cualquiera que utilice servidores mail es fundamental.
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="concave">
+          <ul>
+            <li>
+              <strong>ARP: </strong>
+              Es un protocolo de resolución de direcciones. Se encarga de
+              resolver direcciones físicas o MAC, es decir, descubre la
+              dirección MAC de un dispositivo de la red local y se la da a
+              conocer a otro dispositivo dentro de la misma red.
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="concave">
+          <ul>
+            <li>
+              <strong>IP: </strong>
+              Este protocolo está muy relacionado con el envío de los datos,
+              pero los datos son segmentados en bloques o paquetes. Gestiona las
+              direcciones IP, pero no proporciona mecanismos para verificar que
+              los datos transmitidos llegan y se entienden correctamente en el
+              destino final. Un aspecto muy importante en este protocolo es la
+              dirección IP.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 6 -->
+        <!--
             <section data-transition="slide">
                 <h2>Diferencias entre Protocolos</h2>
                 <ul>
                     <li>Cantidad de participantes (Unicast, Multicast, Broadcast)</li>
-                    <li>Forma de transmisión (Simplex, Semi-dúplex, Dúplex completo)</li>
+                    <li>
+                        Forma de transmisión (Simplex, Semi-dúplex, Dúplex completo)
+                    </li>
                     <li>Jerarquía (Simétrica, Asimétrica)</li>
-                    <li>Modo de conexión (Orientados a conexión, No orientados a conexión)</li>
-                </ul>
-            </section>
+            <li>
+                Modo de conexión (Orientados a conexión, No orientados a conexión)
+            </li>
+        </ul>
+    </section>
+    -->
+        <section data-transition="slide">
+          <h2>Diferencias entre Protocolos</h2>
+          <ul>
+            <li>
+              <strong
+                >Cantidad de participantes o nodos que hay en la comunicación:
+              </strong>
+              Esto se encuentra relacionado en lo que se describía en uno de los
+              apartados anteriores mencionados, en el que indicábamos que
+              existen diversas formas de transmisión de datos de redes
+              informáticas unicast (un único destinatario), multicast (un grupo
+              de destinatarios), broadcast (como destinatarios todos los
+              miembros de la red).
+            </li>
+          </ul>
+        </section>
 
-            <!-- Slide 7 -->
-            <section data-transition="fade">
-                <h2>Conclusiones</h2>
-                <p>Los protocolos de red son fundamentales para la comunicación efectiva y eficiente entre dispositivos en una red, asegurando que los datos se transmitan correctamente.</p>
-            </section>
-        </div>
+        <section data-transition="slide">
+          <ul>
+            <li>
+              <strong>Forma en la que se transmiten los datos: </strong>Esto
+              significa la forma en la que circulan los datos a través de la red
+              simplex (unidireccional), semi-dúplex (envío de datos en ambas
+              direcciones, pero no de forma simultánea) o dúplex completo (envío
+              de datos en ambas direcciones a la vez)
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="slide">
+          <ul>
+            <li>
+              <strong>Jerarquía de los integrantes de la comunicación:</strong>
+              Dependiendo del tipo de jerarquía que exista entre los nodos la
+              comunicación puede ser simétrica o asimétrica.
+            </li>
+          </ul>
+        </section>
+
+        <section data-transition="slide">
+          <ul>
+            <li>
+              <strong> Modo de conexión:</strong> Los protocolos se dividen en
+              los que están orientados a la conexión y los que no. Los primeros
+              se encargan de verificar que la información ha llegado de forma
+              correcta al destinatario y ha sido comprendida por este, y los
+              segundos, no se encargan de corroborarlo, sino que envían mucha
+              menos información de una forma más rápida y no vuelven a enviar
+              los datos en caso de que en la transmisión se haya dado algún tipo
+              de error.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 7 -->
+        <section data-transition="fade">
+          <h2>Conclusiones</h2>
+          <p>
+            Los protocolos de red son fundamentales para la comunicación
+            efectiva y eficiente entre dispositivos en una red, asegurando que
+            los datos se transmitan correctamente.
+          </p>
+        </section>
+      </div>
     </div>
 
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>-->
     <script src="./src/reveal.min.js"></script>
-    
+
     <script>
-        Reveal.initialize({
-            transition: 'slide', // Transición global
-            slideNumber: true,   // Mostrar número de diapositiva
-            controls: true,      // Mostrar controles de navegación
-            progress: true,      // Mostrar barra de progreso
-            hash: true,          // Habilitar navegación por URL hash
-        });
+      Reveal.initialize({
+        transition: "slide", // Transición global
+        slideNumber: true, // Mostrar número de diapositiva
+        controls: true, // Mostrar controles de navegación
+        progress: true, // Mostrar barra de progreso
+        hash: true, // Habilitar navegación por URL hash
+      });
     </script>
-</body>
+  </body>
 </html>
